@@ -7,12 +7,14 @@ import uuid
 from datetime import datetime, time, date
 from models import storage
 
+
 class BaseModel:
     """ A class that defines attributes;
-    -id string assign with uuid
-    -created_at datetime instance
-    -updated_at datetime instance
+    id string assign with uuid
+    created_at datetime instance
+    updated_at datetime instance
     """
+
     def __init__(self, *args, **kwargs):
         """constructor for class attrs id
         created_at and updated_at
