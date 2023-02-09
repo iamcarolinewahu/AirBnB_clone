@@ -1,0 +1,1 @@
+This project is based on the building blocks of the AirBnB full Web Apllication, Most likely this will be its clone. The codebase is built on python programming language and interpreted/compiled on Ubuntu 20.04 LTS Orchestration. 
