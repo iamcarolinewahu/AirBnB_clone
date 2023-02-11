@@ -6,13 +6,27 @@ import cmd
 import json
 from models import storage
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
     """cmd class
     """
     prompt = "(hbnb)"
-    class_dict = {"BaseModel": BaseModel}
+    class_dict = {
+        "BaseModel": BaseModel,
+        "User": User,
+        "State": State,
+        "City": City,
+        "Amenity": Amenity,
+        "Place": Place,
+        "Review": Review
+        }
 
     def do_create(self, line):
         """creates a class instance
@@ -105,10 +119,14 @@ class HBNBCommand(cmd.Cmd):
 
 
 def parse(arg):
+    """splits a line
+    """
     return arg.split()
 
 
 def my_obj(my_line):
+    """Returns key of an object
+    """
     my_list = parse(my_line)
     if len(my_list) == 0:
         print("** class name missing **")
