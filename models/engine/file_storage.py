@@ -5,6 +5,7 @@ and from json
 
 import json
 
+
 class FileStorage:
     """defined a class to serialize and
     deserialize json
@@ -33,7 +34,6 @@ class FileStorage:
             my_dict[key] = value.to_dict()
 
         with open(FileStorage.__file_path, "w") as f:
-           
             json.dump(my_dict, f)
 
     def reload(self):
@@ -41,7 +41,7 @@ class FileStorage:
         """
         from models.base_model import BaseModel
 
-        class_dict = {"BaseModel":BaseModel}
+        class_dict = {"BaseModel": BaseModel}
         obj = {}
         try:
             with open(FileStorage.__file_path, "r") as f:
