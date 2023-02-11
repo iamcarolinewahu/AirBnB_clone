@@ -1,18 +1,15 @@
 #!/usr/bin/env python3
-"""A base class with common methodsmand attributes
+"""A Base class with common methods/attributes
 for other classes
 """
-
 import uuid
 from datetime import datetime, time, date
 from models import storage
 
 
 class BaseModel:
-    """ A class that defines attributes;
-    id string assign with uuid
-    created_at datetime instance
-    updated_at datetime instance
+    """a class that defines attributes id,
+    created_at, updated_at and methods
     """
 
     def __init__(self, *args, **kwargs):
