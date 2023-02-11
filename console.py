@@ -15,18 +15,19 @@ from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
+
     """cmd class
     """
-    prompt = "(hbnb)"
+    prompt = "(hbnb) "
     class_dict = {
-        "BaseModel": BaseModel,
-        "User": User,
-        "State": State,
-        "City": City,
-        "Amenity": Amenity,
-        "Place": Place,
-        "Review": Review
-        }
+            "BaseModel": BaseModel,
+            "User": User,
+            "State": State,
+            "City": City,
+            "Amenity": Amenity,
+            "Place": Place,
+            "Review": Review
+            }
 
     def do_create(self, line):
         """creates a class instance
@@ -70,22 +71,23 @@ class HBNBCommand(cmd.Cmd):
             print(my_list)
         else:
             if line not in HBNBCommand.class_dict:
-                iprint("** class doesn't exist **")
+                print("** class doesn't exist **")
             else:
                 for value in my_dict.values():
                     if value.to_dict()["__class__"] == line:
-                        my_list.append(str(values))
+                        my_list.append(str(value))
                 print(my_list)
 
     def do_update(self, line):
         """updates an instance
         """
+
         my_list = parse(line)
         key = my_obj(line)
         if key:
             if len(my_list) > 4:
-                print("Usage:update <class name> <id> \
-                        <attribute name> \"<attribute value>\"")
+                print("Usage:update <class name> <id>\
+                         <aittribute name> \"<attribute value>\"")
             elif len(my_list) == 3:
                 print("** value missing **")
             elif len(my_list) == 2:
@@ -107,26 +109,33 @@ class HBNBCommand(cmd.Cmd):
     def do_EOF(self, line):
         """Command to end the program
         """
+
         return True
 
     def do_quit(self, line):
         """command to end the program
         """
+
         return True
 
     def emptyline(self):
+
         pass
 
 
 def parse(arg):
+
     """splits a line
     """
+
     return arg.split()
 
 
 def my_obj(my_line):
-    """Returns key of an object
+
+    """returns key of an object
     """
+
     my_list = parse(my_line)
     if len(my_list) == 0:
         print("** class name missing **")
