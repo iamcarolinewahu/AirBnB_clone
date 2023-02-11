@@ -11,7 +11,7 @@ from models.base_model import BaseModel
 class HBNBCommand(cmd.Cmd):
     """cmd class
     """
-    prompt = "(hbnb) "
+    prompt = "(hbnb)"
     class_dict = {"BaseModel": BaseModel}
 
     def do_create(self, line):
