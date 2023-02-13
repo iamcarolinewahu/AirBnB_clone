@@ -109,6 +109,7 @@ class HBNBCommand(cmd.Cmd):
     def do_EOF(self, line):
         """Command to end the program
         """
+        print()
 
         return True
 
@@ -119,6 +120,8 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
+        """Doesn't do anything on ENTER.
+        """
 
         pass
 
